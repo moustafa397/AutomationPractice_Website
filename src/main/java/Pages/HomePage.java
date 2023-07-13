@@ -9,8 +9,11 @@ public class HomePage extends PageBase {
         super(driver);
     }
 
-    private By signInLink = By.linkText("Sign in");
-    private By contactUsBtn = By.linkText("Contact us");
+    private final By  signInLink = By.linkText("Sign in");
+    private final By contactUsBtn = By.linkText("Contact us");
+    private final By searchTxtBox = By.xpath("//input[@placeholder='Search']");
+    private final By searchBtn = By.xpath("//button[@name='submit_search']");
+
 
 
 
@@ -25,6 +28,10 @@ public class HomePage extends PageBase {
         clickButton(contactUsBtn);
     }
 
+    public void makeSearch (String searchValue){
+        setTxtBoxText(searchTxtBox,searchValue);
+        clickButton(searchBtn);
+    }
 
 
 }

@@ -24,7 +24,7 @@ public class LoginTest extends TestBase {
         accountPage = new MyAccountPage(driver);
 
         homePage.OpenRegisterLink();
-        authenticationPage.proceedToCreateAccount("ssssss@ss3s.com");
+        authenticationPage.proceedToCreateAccount("ssshsss@ss3s.com");
         Assert.assertTrue(createAccountPage.getPageHeadingText().contains("CREATE AN ACCOUNT"));
         createAccountPage.createAccount("Mr","Mostafa","Ibrahem","123456789","1","2","1997");
         accountPage.logOut();
