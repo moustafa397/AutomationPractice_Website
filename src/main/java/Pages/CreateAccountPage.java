@@ -54,7 +54,7 @@ public class CreateAccountPage extends PageBase {
         if (title == "Mr"){
             clickButton(Mr);
         }
-        else if (title == "Mr"){
+        else if (title == "Mrs"){
             clickButton(Mrs);
         }
 

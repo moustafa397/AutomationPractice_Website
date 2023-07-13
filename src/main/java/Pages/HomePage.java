@@ -10,6 +10,7 @@ public class HomePage extends PageBase {
     }
 
     private By signInLink = By.linkText("Sign in");
+    private By contactUsBtn = By.linkText("Contact us");
 
 
 
@@ -17,6 +18,11 @@ public class HomePage extends PageBase {
     public void OpenRegisterLink(){
 
          clickButton(signInLink);
+    }
+
+    public void OpenContactPage(){
+
+        clickButton(contactUsBtn);
     }
 
 
