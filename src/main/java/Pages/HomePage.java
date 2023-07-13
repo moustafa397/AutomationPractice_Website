@@ -1,6 +1,6 @@
-package Pages.HomePage;
+package Pages;
 
-import Pages.Base.PageBase;
+import Base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,10 +13,10 @@ public class HomePage extends PageBase {
 
 
 
+
     public void OpenRegisterLink(){
 
          clickButton(signInLink);
-
     }
 
 

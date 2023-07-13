@@ -1,13 +1,9 @@
-package Pages.SignIn;
+package Pages;
 
-import Pages.Base.PageBase;
+import Base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class CreateAccountPage extends PageBase {
     public CreateAccountPage(WebDriver driver) {
@@ -30,6 +26,11 @@ public class CreateAccountPage extends PageBase {
 
 
 
+    public String getPageHeadingText(){
+        waitTillTextAppear(pageHeading,"CREATE AN ACCOUNT",30);
+        return   getElementText(pageHeading);
+    }
+
     public void createAccount (String title,String firstName,String lastName , String passwd,String day, String month, String year){
         chooseTitle(title);
         setTxtBoxText(firstNameTxtBox,firstName);
@@ -40,14 +41,9 @@ public class CreateAccountPage extends PageBase {
         findDropdownElement(yearDropdownList).selectByValue(year);
         clickButton(newsletterCheckBox);
         clickButton(registerBtn);
-        waitTillTextAppear(pageHeading,"MY ACCOUNT",15);
 
 
-    }
 
-
-    public String getPageHeadingText(){
-        return   getElementText(pageHeading);
     }
 
     private Select findDropdownElement ( By dropElement){

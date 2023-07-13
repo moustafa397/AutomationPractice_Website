@@ -1,10 +1,10 @@
-package Tests.RegisterTest;
+package Tests.RegisterTests;
 
 import Data.ExcelReader;
-import Pages.HomePage.HomePage;
-import Pages.SignIn.AuthenticationPage;
-import Pages.SignIn.CreateAccountPage;
-import Pages.SignIn.MyAccountPage;
+import Pages.HomePage;
+import Pages.AuthenticationPage;
+import Pages.CreateAccountPage;
+import Pages.MyAccountPage;
 import Tests.TestBase.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;

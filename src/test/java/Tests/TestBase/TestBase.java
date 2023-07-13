@@ -2,17 +2,10 @@ package Tests.TestBase;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.*;
 
-import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
@@ -37,17 +30,18 @@ public class TestBase {
         }
 
         driver.manage().window().maximize();
-        driver.get("http://www.automationpractice.pl/");
-
-
-
+        goHome();
     }
 
 
+    public void goHome(){
+        driver.get("http://www.automationpractice.pl/");
+    }
 
     @AfterClass
     public void stopDriver(){
         //driver.quit();
 
     }
+
 }

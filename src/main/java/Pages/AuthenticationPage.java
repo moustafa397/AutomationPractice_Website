@@ -1,12 +1,8 @@
-package Pages.SignIn;
+package Pages;
 
-import Pages.Base.PageBase;
+import Base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class AuthenticationPage extends PageBase {
     public AuthenticationPage(WebDriver driver) {
@@ -14,13 +10,16 @@ public class AuthenticationPage extends PageBase {
     }
 
     private By pageHeading = By.className("page-heading");
-    private By emailTxtBox = By.id("email_create");
+    private By registerEmailTxtBox = By.id("email_create");
     private By createAccountBtn = By.id("SubmitCreate");
+    private By signInEmailTxtBox = By.id("email");
+    private By passwordTxtBox = By.id("passwd");
+    private By signInBtn = By.id("SubmitLogin");
+
 
     public void proceedToCreateAccount(String email){
-        setTxtBoxText(emailTxtBox,email);
+        setTxtBoxText(registerEmailTxtBox,email);
         clickButton(createAccountBtn);
-        waitTillTextAppear(pageHeading,"CREATE AN ACCOUNT",30);
 
     }
 
@@ -28,6 +27,10 @@ public class AuthenticationPage extends PageBase {
        return   getElementText(pageHeading);
     }
 
-
+    public void login (String email,String passwd){
+        setTxtBoxText(signInEmailTxtBox,email);
+        setTxtBoxText(passwordTxtBox,passwd);
+        clickButton(signInBtn);
+    }
 
 }
